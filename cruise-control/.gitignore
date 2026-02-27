@@ -1,0 +1,14 @@
+# CMake files
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+
+# Compiled binaries
+*.o
+*.out
+cruise
+build/*
+
+# IDE files
+.vscode/
