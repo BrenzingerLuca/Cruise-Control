@@ -5,7 +5,6 @@
 #include "cruise_control/car.h"
 #include "cruise_control/pid.h"
 #include "cruise_control/csv.h"
-#include "cruise_control/input_validator.h"
 #include "cruise_control/visualizer.h"
 #include "cruise_control/simulation.h"
 

@@ -11,8 +11,9 @@ A physics-based simulation of a vehicle's cruise control system using a discrete
 4. [How It Works](#-how-it-works)
 5. [Installation & Build](#-installation--build)
 6. [Usage](#-usage)
-7. [Roadmap & Future Improvements](#-roadmap--future-improvements)
-8. [Background & Evolution](#-background--evolution)
+7. [Testing](#-testing)
+8. [Roadmap & Future Improvements](#-roadmap--future-improvements)
+9. [Background & Evolution](#-background--evolution)
 
 ---
 ## Project Structure<a name="-project-structure"></a>
@@ -113,6 +114,19 @@ Alternatively you can visualize the results using the provided Python script:
 ```bash
 python3 plot_csv.py my_cruise.csv
 ```
+## Testing<a name="-testing"></a>
+To ensure the mathematical correctness of the PID controller and the physical fidelity of the vehicle model, this project uses **GoogleTest (GTest)** for automated unit and integration testing.
+
+### Test Coverage:
+- **PID Logic:** Verification of P, I, and D components, including error accumulation and steady-state behavior.
+- **Vehicle Physics:** Validation of Newton's second law, friction-based deceleration, and terminal velocity equilibrium.
+- **Integration Tests:** Full simulation runs verifying that the closed-loop system converges to the target velocity from different initial states (acceleration, deceleration, and zero-state).
+
+### Running the Tests:
+From the `build` directory, execute the test runner:
+```bash
+./run_unit_tests
+```
 
 ## Roadmap & Future Improvements<a name="-roadmap--future-improvements"></a>
 
@@ -121,7 +135,7 @@ This project is under active development. My goal is to transform this from a ba
 ### Software Architecture & Refactoring
 - [x] **Encapsulation:** Implementation of a dedicated `Simulation` class to decouple the control loop from the `main` function, improving modularity and testability.
 - [x] **YAML Configuration:** Moved from manual CLI input to external configuration files 
-- [ ] **Unit Testing:** Integrating **GoogleTest (GTest)** to ensure the reliability of core PID logic and physics calculations.
+- [x] **Unit Testing:** Integrating **GoogleTest (GTest)** to ensure the reliability of core PID logic and physics calculations.
 
 ### Advanced Physics & Control Engineering
 - [ ] **Non-linear Dynamics:** Implementing aerodynamic drag ($v^2$) and rolling resistance for higher fidelity and more realistic vehicle behavior.
