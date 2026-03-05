@@ -63,7 +63,7 @@ FetchContent_MakeAvailable(googletest)
 
 # Define the unit test runner and link against the core library and gtest_main.
 # 'gtest_main' provides a default main() function for the test suite.
-add_executable(run_unit_tests tests/pid_test.cpp tests/car_test.cpp) 
+add_executable(run_unit_tests tests/pid_test.cpp tests/car_test.cpp tests/simulation_test.cpp) 
 target_link_libraries(run_unit_tests PRIVATE 
     cruise_lib 
     gtest_main
